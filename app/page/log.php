@@ -8,8 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <link rel="stylesheet" href="css/log.css">
 </head>
+
+<style>
+body {
+  background-color: rgb(57, 57, 57);
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  background-position-x: -50px;
+  background-size: 752px 756px;
+}
+</style>
 
 <body>
   <section id="login">
@@ -87,18 +96,18 @@
 </body>
 
 <script>
-    function switch_etat() {
-        let login = document.getElementById("login");
-        let sign_up = document.getElementById("sign_up");
+function switch_etat() {
+  let login = document.getElementById("login");
+  let sign_up = document.getElementById("sign_up");
 
-        if(login.hidden) {
-            login.hidden = false;
-            sign_up.hidden =true;
-        } else {
-            login.hidden = true;
-            sign_up.hidden =false;
-        }
-    }
+  if (login.hidden) {
+    login.hidden = false;
+    sign_up.hidden = true;
+  } else {
+    login.hidden = true;
+    sign_up.hidden = false;
+  }
+}
 </script>
 
 </html>
