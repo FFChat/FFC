@@ -1,0 +1,7 @@
+body {
+  background-color: rgb(57, 57, 57);
+  background-image: url("logo.png");
+  background-repeat: no-repeat;
+  background-position-x: -50px;
+  background-size: 752px 756px;
+}

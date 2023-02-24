@@ -1,13 +1,21 @@
 body {
   font-family: sans-serif;
   background: #212529;
+  background-image: url("../../images/logo.png");
+  background-origin: border-box;
+  background-repeat: no-repeat;
 }
 
 .card{
-  background: #212529;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.bord{
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .btn-login{
-  background-color: rgba(255, 255, 255, 0.05);
+  background: #212529;
   border: 1px solid rgba(255, 255, 255, 0.5);
 }
