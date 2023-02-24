@@ -5,19 +5,21 @@
   <meta charset="utf-8" />
   <title>Untilted</title>
   <link href="/FFC/app/page/css/general.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> -->
+  <link href="/FFC/app/templates/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="/FFC/app/templates/fontawsome/css/fontawesome.css" rel="stylesheet">
   <link href="/FFC/app/templates/fontawsome/css/brands.css" rel="stylesheet">
   <link href="/FFC/app/templates/fontawsome/css/solid.css" rel="stylesheet">
+  <link href="/FFC/app/page/css/<?= $page ?>.css" rel="stylesheet">
 </head>
 
 <body class="bg-dark text-white">
   <div class="container-fluid">
     <div class="row">
 
-      <nav class="d-none d-md-flex flex-column flex-shrink-0 p-3 text-white col-md-2 sidebar position-fixed">
+      <nav class="d-none d-md-flex flex-column flex-shrink-0 p-3 text-white col-md-2 sidebar position-sticky">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-          <img src="../images/logo.png" alt="logo" width="75" height="70">
+          <img src="images/logo.png" alt="logo" width="75" height="70">
           <span class="fs-4">Femme Fatal Chat</span>
         </a>
         <hr>
@@ -63,7 +65,7 @@
         <hr>
         <div class="dropdown">
           <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+            <img src="#" alt="" width="32" height="32" class="rounded-circle me-2">
             <strong>mdo</strong>
           </a>
           <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
@@ -79,5 +81,5 @@
       </nav>
 
 
-      <main class="col">
+      <main class="col px-0">
         <!-- La page -->
