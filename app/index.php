@@ -15,18 +15,19 @@ if(!isset($_GET['page']) || empty($_GET['page'])) {
 
 switch($_GET['page']) {
   case 'home':
-    require_once('page/home.php');
+    loadPage('home');
   case 'general':
-    headerAdd('general_chat');
-    require_once('page/general_chat.php');
-    footerAdd('general_chat');
-
+    loadPage('general_chat', 'General');
+    break;
+  case 'login':
+    loadPage('login', 'Login');
+    break;
 }
 
-
-function headerAdd($page = NULL) {
-  require_once('templates/header.php');
-}
-function footerAdd($page = NULL) {
-  require_once('templates/footer.php');
+function loadPage($page = NULL, $nom = 'Unamed') {
+  include('templates/header.php');
+  include('model/'. $page . '.php');
+  include('controller/'. $page . '.php');
+  include('page/'. $page . '.php');
+  include('templates/footer.php');
 }

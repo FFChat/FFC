@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
   <div class="row">
     <section class="chat px-0">
@@ -9,15 +8,12 @@
         </div>
       </div>
       <ul id="message-space" class="">
-        <li class="general-chat d-flex flex-row border-white border-top p-2 mx-3">
-          <img src="images/img_util/123.gif" id='123' width="32" height="32" class="rounded me-2" alt="image utilisateur">
-          <div>
-            <label for="123" class="pb-2 text-white-50">Ticket2Caisse</label>
-            <p>Bonjour</p>
-          </div>
-        </li>
+        <?php
+        foreach ($messages as $key => $message) {
+        include('templates/message.php');
+        }
+        ?>
       </ul>
     </section>
   </div>
 </div>
-

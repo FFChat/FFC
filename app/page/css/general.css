@@ -1,10 +1,18 @@
 nav {
   height: 100vh;
   border-right: 1px solid rgba(255, 255, 255, 0.5);
-  background-color: rgba(0, 0, 0, 0.4);
+}
+.nav-color {
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
-i.fa-solid {
+.utilities {
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0 0 0 5px;
+}
+
+i.fa-solid.naving {
   margin-right: 8px;
 }
 
@@ -31,3 +39,6 @@ li a.nav-link.custom-nav-link:hover{
   border: 1px solid rgb(255, 255, 255);
 }
 
+.modal {
+  backdrop-filter: blur(4px);
+}
