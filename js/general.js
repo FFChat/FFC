@@ -13,9 +13,9 @@ function throwNewMessage(id, message, user) {
 
   list.appendChild(element);
 }
+const srvIP = (location.host.slice(0, -5));
 
-
-const socket = io("http://10.1.3.23:3000", {
+const socket = io("http://"+srvIP+":3000", {
   withCredentials: false,
   extraHeaders: {
     "socket-header": "bonjour"
@@ -33,21 +33,3 @@ function emitmsg() {
 socket.on("chat message", (arg) => {
   throwNewMessage('message-space', arg, 1)
 });
-
-// var messages = document.getElementById('messages');
-// var form = document.getElementById('form');
-// var input = document.getElementById('input');
-
-// form.addEventListener('submit', function(e) {
-//     e.preventDefault();
-//     if (input.value) {
-//     socket.emit('chat message', input.value);
-//     }
-// });
-
-// socket.on('chat message', function(msg) {
-//     var item = document.createElement('li');
-//     item.textContent = msg;
-//     messages.appendChild(item);
-//     window.scrollTo(0, document.body.scrollHeight);
-// });
