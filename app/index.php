@@ -16,6 +16,7 @@ if(!isset($_GET['page']) || empty($_GET['page'])) {
 switch($_GET['page']) {
   case 'home':
     loadPage('home');
+    break;
   case 'general':
     loadPage('general_chat', 'General');
     break;
@@ -25,9 +26,9 @@ switch($_GET['page']) {
 }
 
 function loadPage($page = NULL, $nom = 'Unamed') {
-  include('templates/header.php');
-  include('model/'. $page . '.php');
-  include('controller/'. $page . '.php');
-  include('page/'. $page . '.php');
-  include('templates/footer.php');
+  require_once('templates/header.php');
+  require_once('model/'. $page . '.php');
+  require_once('controller/'. $page . '.php');
+  require_once('page/'. $page . '.php');
+  require_once('templates/footer.php');
 }

@@ -1,13 +1,12 @@
-const express = require('express');
-const app = express();
-const http = require('http');
-const server = http.createServer(app);
-const { Server } = require("socket.io");
-const io = new Server(server);
+const http = require("http");
+const server = http.createServer();
 
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/web/index.html');
+const io = require("socket.io")(server, {
+  cors: {
+    credentials: false
+  }
 });
+
 
 io.on('connection', (socket) => {
   const sid = socket.id;
@@ -23,6 +22,7 @@ io.on('connection', (socket) => {
   io.emit('some event', { someProperty: 'some value', otherProperty: 'other value' });
   
   socket.on('chat message', (msg) => {
+      console.log(msg);
       io.emit('chat message', msg);
     });
 });

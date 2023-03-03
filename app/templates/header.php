@@ -19,12 +19,6 @@
     <i class="fa-solid fa-plus"></i>
     <i class="fa-solid fa-users"></i>
   </div>
-
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#chanel-create">
-    Launch demo modal
-  </button>
-
   <!-- Modal -->
   <div class="modal fade text-black" id="chanel-create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
