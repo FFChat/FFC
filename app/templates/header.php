@@ -15,33 +15,68 @@
 
 <body class="bg-dark text-white">
 
+  <!-- Button Trigger Modal -->
   <div class="position-absolute top-0 end-0 nav-color p-1 utilities">
-    <i class="fa-solid fa-plus"></i>
-    <i class="fa-solid fa-users"></i>
-  </div>
-  <!-- Modal -->
-  <div class="modal fade text-black" id="chanel-create" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <button type="button" class="btn btn-outline-light fa-solid fa-plus" data-bs-toggle="modal"
+      data-bs-target="#chanel-create">
+    </button>
+
+    <!-- Modal New channel-->
+    <div class="modal fade text-white" id="chanel-create" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">New channel</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <label for="new-channel-name">Name</label>
+            <div class="form-outline form-white mb-4">
+              <input type="text" class="form-control form-control-lg" placeholder="Name" />
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark text-white btn-create">Create the
+              channel</button>
+            <button type="button" class="btn btn-outline-dark text-white btn-Close"
+              data-bs-dismiss="modal">Close</button>
+          </div>
         </div>
-        <div class="modal-body">
-          <label for="new-channel-name">Nom</label>
-          <input type="text" name="new-channel-name" id="new-channel-name">
-          <label for="new-channel-name">Nom</label>
-          <input type="text" name="new-channel-name" id="new-channel-name">
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+
+    <!-- Button Trigger Modal -->
+    <button type="button" class="btn btn-outline-light fa-solid fa-users" data-bs-toggle="modal"
+      data-bs-target="#personn-create">
+    </button>
+
+    <!-- Modal Nombre Personne Presente-->
+    <div class="modal fade text-white" id="personn-create" tabindex="-1" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content bg-dark">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Users</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <label for="new-channel-name">Name</label>
+            <div class="form-outline form-white mb-4">
+              <input type="text" class="form-control form-control-lg" placeholder="Name" />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-dark text-white btn-Close"
+              data-bs-dismiss="modal">Close</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-
 
   <div class="container-fluid">
     <div class="row">
@@ -76,24 +111,21 @@
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link custom-nav-link text-white">
-              <svg class="bi me-2" width="16" height="16">
-                <use xlink:href="#grid" />
-              </svg>
+            <i class="fa-solid naving fa-clothes-hanger"></i>
               Products
             </a>
           </li>
           <li class="nav-item">
             <a href="#" class="nav-link custom-nav-link text-white">
-              <svg class="bi me-2" width="16" height="16">
-                <use xlink:href="#people-circle" />
-              </svg>
+            <i class="fa-solid naving fa-palette"></i>
               Customers
             </a>
           </li>
         </ul>
         <hr>
         <div class="dropdown">
-          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+            id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
             <img src="#" alt="" width="32" height="32" class="rounded-circle me-2">
             <strong>mdo</strong>
           </a>

@@ -2,6 +2,7 @@ nav {
   height: 100vh;
   border-right: 1px solid rgba(255, 255, 255, 0.5);
 }
+
 .nav-color {
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -26,7 +27,6 @@ i.fa-solid.naving {
   } */
 }
 
-
 li a.nav-link.custom-nav-link{
   margin: 4px 0 4px;
   background-color: rgba(255, 255, 255, 0.05);
@@ -41,4 +41,21 @@ li a.nav-link.custom-nav-link:hover{
 
 .modal {
   backdrop-filter: blur(4px);
+}
+
+/*Background modal*/
+.bg-modal{
+  background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%,  rgba(229,120,167,0.3) 30%, rgba(229,120,167,0.3) 69%, rgba(235,2,8,0.25) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+/*Bouttons modal*/
+button.btn-create.btn{
+  background-color: rgba(0, 0, 0, 0.7);
+  background: linear-gradient(90deg, rgba(255,255,255,0.1) 0%,  rgba(229,120,167,0.3) 30%, rgba(229,120,167,0.3) 69%, rgba(235,2,8,0.25) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+button.btn-Close.btn{
+  background-color: rgb(225, 54, 93, 0.7);
 }
