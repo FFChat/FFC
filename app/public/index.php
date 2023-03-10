@@ -26,9 +26,9 @@ switch($_GET['page']) {
 }
 
 function loadPage($page = NULL, $nom = 'Unamed') {
-  include('templates/header.php');
-  include('model/'. $page . '.php');
-  include('controller/'. $page . '.php');
-  include('page/'. $page . '.php');
-  include('templates/footer.php');
+  include('../templates/header.php');
+  include('../model/'. $page . '.php');
+  include('../controller/'. $page . '.php');
+  include('../page/'. $page . '.php');
+  include('../templates/footer.php');
 }

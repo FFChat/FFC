@@ -10,7 +10,7 @@
       <ul id="message-space" class="">
         <?php
         foreach ($messages as $key => $message) {
-        include('templates/message.php');
+        include('../templates/message.php');
         }
         ?>
       </ul>
