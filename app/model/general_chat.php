@@ -20,5 +20,4 @@ class general_chat extends modelBase {
     ]);
     return $recipesStatement->fetchAll();
   }
-
 }

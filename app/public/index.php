@@ -1,19 +1,20 @@
 <?php
 
 // routes
-
-// if(!isset($_SESSION)) {
-//   require_once('page/login-signin.php');
-//   die;
-// }
-
-if(!isset($_GET['page']) || empty($_GET['page'])) {
-  require_once('../page/home.php');
+session_start();
+if(!isset($_SESSION['logged'])) {
+  require_once('../view/login.php');
   die;
 }
 
+if(isset($_GET['page']) || !empty($_GET['page'])) {
+  $page = $_GET['page'];
+} else {
+  $page = 'home';
+}
 
-switch($_GET['page']) {
+
+switch($page) {
   case 'home':
     loadPage('home');
     break;
@@ -21,14 +22,14 @@ switch($_GET['page']) {
     loadPage('general_chat', 'General');
     break;
   case 'login':
-    loadPage('login', 'Login');
+    require_once('../view/login.php');
     break;
 }
 
-function loadPage($page = NULL, $nom = 'Unamed') {
-  include('../templates/header.php');
-  include('../model/'. $page . '.php');
-  include('../controller/'. $page . '.php');
-  include('../page/'. $page . '.php');
-  include('../templates/footer.php');
+function loadPage($page = NULL, $nom = 'In progress...') {
+  require_once('../templates/header.php');
+  require_once('../model/'. $page . '.php');
+  require_once('../controller/'. $page . '.php');
+  require_once('../view/'. $page . '.php');
+  require_once('../templates/footer.php');
 }

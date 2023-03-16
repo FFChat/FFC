@@ -2,6 +2,12 @@
 
 // routes
 
+$page = '';
+
+if(!isset($_GET['page']) || empty($_GET['page'])) {
+  die('ui');
+}
+
 // if(!isset($_SESSION)) {
 //   require_once('page/login-signin.php');
 //   die;
@@ -9,7 +15,6 @@
 
 if(!isset($_GET['page']) || empty($_GET['page'])) {
   require_once('page/home.php');
-  die;
 }
 
 

@@ -1,6 +1,6 @@
 body {
   background-color: rgb(57, 57, 57);
-  background-image: url("../../images/logo_1.png");
+  background-image: url("../images/logo_login.png");
   background-size: 100vh, contain;
   background-repeat: no-repeat;
 }
