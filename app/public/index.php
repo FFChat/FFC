@@ -5,6 +5,14 @@ session_start();
 if(!isset($_SESSION['logged'])) {
   require_once('../view/login.php');
   die;
+} else {
+
+  if(isset($_GET['page']) || !empty($_GET['page'])) {
+    $page = $_GET['page'];
+  } else {
+    $page = 'home';
+  }
+
 }
 
 if(isset($_GET['page']) || !empty($_GET['page'])) {
@@ -12,7 +20,6 @@ if(isset($_GET['page']) || !empty($_GET['page'])) {
 } else {
   $page = 'home';
 }
-
 
 switch($page) {
   case 'home':

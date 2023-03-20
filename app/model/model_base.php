@@ -16,5 +16,4 @@ class modelBase {
     $recipesStatement = $this->db->prepare($sqlQuery);
     $recipesStatement->execute([$text, $id_chanel, $id_user]);
   }
-
 }
