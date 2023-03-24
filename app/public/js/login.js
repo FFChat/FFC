@@ -13,7 +13,7 @@ function switch_etat() {
 
 function compteCreate() {
 
-  // récpuération data :
+  // récupération data :
   const arg = {
     name: document.getElementById("up_name").value,
     mdp: document.getElementById("up_mdp").value,
@@ -25,7 +25,7 @@ function compteCreate() {
 
 function compteLogin() {
 
-  // récpuération data :
+  // récupération data :
   const name = document.getElementById("in_name").value;
   const mdp = document.getElementById("in_mdp").value;
   const arg = {
