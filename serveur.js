@@ -16,7 +16,7 @@ io.on('connection', (socket) => {
   const userId = socket.handshake.query.id
   // console.log(`User connected with socket id ${sid}`);
   // console.log(`${socket.handshake.query.id} connected`);
-  
+
   option = {
     id: userId
   }
@@ -32,15 +32,17 @@ io.on('connection', (socket) => {
   });
 
   socket.on('chat message', (msg, channel) => {
+    if(msg) {
       console.log(msg);
-      io.emit('chat message', msg, nickname, userId);
-      
+      io.emit('chat message', escapeHtml(msg), nickname, userId);
+
       const arg = {
         user: userId,
         channel: channel,
         msg: msg
       }
       fetchSimple('addMessage', arg, 'general_chat')
+    }
     });
 });
 
@@ -71,4 +73,15 @@ function fetchSimple(funcontToExecute, arg, page) {
         resolve(response);
       });
   })
+}
+
+function escapeHtml(text) {
+  var map = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
 }

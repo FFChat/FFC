@@ -37,10 +37,10 @@ class login extends modelBase {
   }
 
   public function isLogJS($id) {
-    $sqlQuery = 'SELECT logged_js FROM `user` WHERE id = ? AND WHERE logged_js = 1';
-    $recipesStatement = $this->db->prepare($sqlQuery);
-    $recipesStatement->execute([$id]);
-    return $recipesStatement->fetch(PDO::FETCH_ASSOC);
+  $sqlQuery = 'SELECT logged_js FROM `user` WHERE id = ? AND WHERE logged_js = 1';
+  $recipesStatement = $this->db->prepare($sqlQuery);
+  $recipesStatement->execute([$id]);
+  return $recipesStatement->fetch(PDO::FETCH_ASSOC);
   }
 
   public function logoutJS($id){

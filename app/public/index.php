@@ -28,12 +28,16 @@ switch($page) {
   case 'general':
     loadPage('general_chat', 'General');
     break;
+  case 'channel':
+    loadPage('private_channel');
+    break;
   case 'login':
     require_once('../view/login.php');
     break;
 }
 
 function loadPage($page = NULL, $nom = 'In progress...') {
+  require_once('../controller/general_controller.php');
   require_once('../templates/header.php');
   require_once('../model/'. $page . '.php');
   require_once('../controller/'. $page . '.php');
