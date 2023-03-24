@@ -17,4 +17,15 @@ class modelBase {
     $recipesStatement->execute([$text, $id_chanel, $id_user]);
   }
 
+  public function getMessageUserChanel($chanel_id) {
+    $sqlQuery = 'SELECT message.text, user.nickname, message.user_id FROM message join user on user_id=user.id where message.channel_id=:chanel_id';
+
+    $recipesStatement = $this->db->prepare($sqlQuery);
+    $recipesStatement->execute([
+      'chanel_id' => $chanel_id
+    ]);
+    return $recipesStatement->fetchAll();
+  }
+
+  
 }
