@@ -1,4 +1,3 @@
-const { channel } = require("diagnostics_channel");
 const http = require("http");
 const server = http.createServer();
 
@@ -9,79 +8,25 @@ const io = require("socket.io")(server, {
 });
 
 
-
 io.on('connection', (socket) => {
   const sid = socket.id;
-  var nickname = '';
-  const userId = socket.handshake.query.id
-  // console.log(`User connected with socket id ${sid}`);
-  // console.log(`${socket.handshake.query.id} connected`);
 
-  option = {
-    id: userId
-  }
-  fetchSimple('getUserInformation',option, 'login').then((response) => {
-    console.log(response.nickname + ' is connected');
-    nickname = response.nickname
-    io.emit('connectionToClient', nickname);
-  });
-
+  console.log(`User connected with socket id ${sid}`);
+  io.emit('chat message', `User with socket id ${sid} connected`);
+  
   socket.on('disconnect', () => {
     console.log(`User with socket id ${sid} disconnected`);
-    io.emit('disconnectToClient', `User with socket id ${sid} disconnected`);
+    io.emit('chat message', `User with socket id ${sid} disconnected`);
   });
-
-  socket.on('chat message', (msg, channel) => {
-    if(msg) {
+  
+  io.emit('some event', { someProperty: 'some value', otherProperty: 'other value' });
+  
+  socket.on('chat message', (msg) => {
       console.log(msg);
-      io.emit('chat message', escapeHtml(msg), nickname, userId);
-
-      const arg = {
-        user: userId,
-        channel: channel,
-        msg: msg
-      }
-      fetchSimple('addMessage', arg, 'general_chat')
-    }
+      io.emit('chat message', msg);
     });
 });
 
 server.listen(3000, () => {
   console.log('listening on *:3000');
 });
-
-
-function fetchSimple(funcontToExecute, arg, page) {
-  return new Promise((resolve, reject) => {
-
-    const params = {
-      page: page,
-      function: funcontToExecute,
-      ...arg
-    };
-    const options = {
-        method: 'POST',
-        body: new URLSearchParams(params),
-        headers: {
-          'Content-Type' : 'application/x-www-form-urlencoded'
-        }
-    };
-
-    fetch('http://localhost:8080/api.php', options)
-      .then( response => response.json() )
-      .then( response => {
-        resolve(response);
-      });
-  })
-}
-
-function escapeHtml(text) {
-  var map = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;'
-  };
-  return text.replace(/[&<>"']/g, function(m) { return map[m]; });
-}

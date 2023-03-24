@@ -24,44 +24,17 @@ function compteLogin() {
 
   if($user) {
     $return['success'] = 1;
+    // $return['user'] = $user['id'];
     $return['msg'] = 'Login...';
     $_SESSION['nickname'] = $user['nickname'];
     $_SESSION['id'] = $user['id'];
     $_SESSION['logged'] = TRUE;
-    $mod->logStatusTrue($user['id']);
     echo(json_encode($return));
   } else {
     $return['success'] = 0;
     $return['msg'] = 'Nom d\'utilisateur ou mot de passe introuvable';
     echo(json_encode($return));
   }
-}
 
-function compteLogout() {
-  session_destroy();
 
-  $return['success'] = 1;
-  $return['msg'] = 'Déconnecter';
-  echo(json_encode($return));
-}
-
-function loginJS($id) {
-  global $mod;
-
-  if($mod->logIn12H($id) && !($mod->isLogJS($id))) {
-    $mod->logJSTrue($id);
-    return true;
-  } else {
-    return false;
-  }
-}
-
-function logoutJS($id) {
-  global $mod;
-  $mod->logoutJS($id);
-}
-
-function getUserInformation() {
-  global $mod;
-  echo json_encode($mod->getUserInfo($_POST['id']));
 }

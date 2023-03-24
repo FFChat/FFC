@@ -33,8 +33,7 @@
                   <input type="password" class="form-control form-control-lg" id="in_mdp" placeholder="Password" />
                 </div>
 
-                <button class="btn btn-outline-light btn-lg px-5 btn-a" onclick="compteLogin()"
-                  type="submit">Login</button>
+                <button class="btn btn-outline-light btn-lg px-5 btn-a" onclick="compteLogin()" type="submit">Login</button>
 
               </div>
               <div>
@@ -62,8 +61,7 @@
                 <h2 class="fw-bold mb-5 text-uppercase">Sign Up</h2>
 
                 <div class="form-outline form-white mb-4">
-                  <input type="text" id="up_name" class="form-control form-control-lg" placeholder="Username"
-                    required />
+                  <input type="text" id="up_name" class="form-control form-control-lg" placeholder="Username" required />
                 </div>
 
                 <div class="form-outline form-white mb-4">
@@ -75,13 +73,11 @@
                   <!-- <input type="file" name="img" id="img"> -->
                 </div>
 
-                <button class="btn btn-outline-light btn-lg px-5 btn-a" onclick="compteCreate()" type="submit"
-                  accesskey="s">Create</button>
+                <button class="btn btn-outline-light btn-lg px-5 btn-a" onclick="compteCreate()" type="submit">Login</button>
 
               </div>
               <div>
-                <p class="mb-0">You have an account? <a href="#" onclick="switch_etat()"
-                    class="text-white-50 fw-bold">Login</a></p>
+                <p class="mb-0">You have an account? <a href="#" onclick="switch_etat()" class="text-white-50 fw-bold">Login</a></p>
               </div>
 
             </div>
@@ -93,25 +89,21 @@
 </body>
 
 <div class="position-fixed top-0 end-0">
-  <div id="notif_success" class="m-3 position-relative top-0 end-0 toast align-items-center text-bg-success border-0"
-    role="alert" aria-live="assertive" aria-atomic="true">
+  <div id="notif_success" class="m-3 position-relative top-0 end-0 toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
       <div class="toast-body" id="text-notif-success">
       </div>
-      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-        aria-label="Close"></button>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
   </div>
 </div>
 
 <div class="position-fixed top-0 end-0">
-  <div id="notif_danger" class="m-3 position-relative top-0 end-0 toast align-items-center text-bg-danger border-0"
-    role="alert" aria-live="assertive" aria-atomic="true">
+  <div id="notif_danger" class="m-3 position-relative top-0 end-0 toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
     <div class="d-flex">
       <div class="toast-body" id="text-notif-danger">
       </div>
-      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
-        aria-label="Close"></button>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
     </div>
   </div>
 </div>
