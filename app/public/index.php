@@ -2,17 +2,31 @@
 
 // routes
 session_start();
+<<<<<<< HEAD
  if(!isset($_SESSION['logged'])) {
    require_once('../view/login.php');
    die;
  }
+=======
+if(!isset($_SESSION['logged'])) {
+  require_once('../view/login.php');
+  die;
+} else {
+
+  if(isset($_GET['page']) || !empty($_GET['page'])) {
+    $page = $_GET['page'];
+  } else {
+    $page = 'home';
+  }
+
+}
+>>>>>>> e9e9ce91c76c4854b37ac697f8f882a09c146fc4
 
 if(isset($_GET['page']) || !empty($_GET['page'])) {
   $page = $_GET['page'];
 } else {
   $page = 'home';
 }
-
 
 switch($page) {
   case 'home':
