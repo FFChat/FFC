@@ -4,9 +4,9 @@
 
 $page = '';
 
-if(!isset($_GET['page']) || empty($_GET['page'])) {
-  die('ui');
-}
+// if(!isset($_GET['page']) || empty($_GET['page'])) {
+//   die('ui');
+// }
 
 // if(!isset($_SESSION)) {
 //   require_once('page/login-signin.php');
