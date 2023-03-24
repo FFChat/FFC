@@ -2,10 +2,10 @@
 
 // routes
 session_start();
-if(!isset($_SESSION['logged'])) {
-  require_once('../view/login.php');
-  die;
-}
+ if(!isset($_SESSION['logged'])) {
+   require_once('../view/login.php');
+   die;
+ }
 
 if(isset($_GET['page']) || !empty($_GET['page'])) {
   $page = $_GET['page'];
