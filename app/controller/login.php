@@ -24,7 +24,6 @@ function compteLogin() {
 
   if($user) {
     $return['success'] = 1;
-    // $return['user'] = $user['id'];
     $return['msg'] = 'Login...';
     $_SESSION['nickname'] = $user['nickname'];
     $_SESSION['id'] = $user['id'];

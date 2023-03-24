@@ -32,6 +32,9 @@ socket.on("disconnectToClients", (socket) => {
 
 function emitMsg() {
   socket.emit("chat message", document.getElementById("chat-text-input-id").value, 1 );
+
+  var input = document.getElementById("chat-text-input-id");
+  input.value = "";
 }
 
 const form = document.querySelector('form');
@@ -72,21 +75,4 @@ function fetchSimple(funcontToExecute, arg, page) {
         }
       });
   })
-}
-
-
-function test() {
-  option = {
-    id:1
-  }
-  fetchSimple('getUserInformation',option, 'login')
-}
-function boop() {
-  const arg = {
-  user: 1,
-  channel: 1,
-  msg: 'yo'
-}
-fetchSimple('addMessage', arg, 'general_chat')
-
 }
