@@ -1,5 +1,11 @@
 <?php
 
+require_once('../../loadenv.php');
+
+use DevCoder\DotEnv;
+
+(new DotEnv('../.env'))->load();
+
 // routes
 session_start();
 

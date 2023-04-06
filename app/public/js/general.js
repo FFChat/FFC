@@ -13,9 +13,7 @@ function throwNewMessage(id, message, nickname, userId) {
 
   list.appendChild(element);
 }
-const srvIP = (location.host.slice(0, -5));
-
-const socket = io("http://"+srvIP+":3000", {
+const socket = io(nodeIP, {
   withCredentials: false,
   query: {
     id: userId

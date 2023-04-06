@@ -5,7 +5,7 @@ class modelBase {
 
   function __construct() {
     try {
-      $this->db = new PDO('mysql:host=localhost:3310;dbname=ffc;charset=utf8', 'user', 'user');
+      $this->db = new PDO(getenv('databaseLog.IP'), getenv('databaseLog.userName'), getenv('databaseLog.password'));
     } catch (Exception $e) {
       die($e->getMessage());
     }

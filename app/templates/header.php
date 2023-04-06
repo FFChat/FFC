@@ -107,6 +107,20 @@
               General
             </a>
           </li>
+          <?php $acces = getAccessibleChanel($_SESSION['id']); if(!empty($acces)): foreach($acces as $key => $i): ?>
+            <li class="nav-item">
+              <?php foreach($i as $y): ?>
+                <h5><?=$key?></h5>
+            <a href="?page=channel&id=<?= $y['id'] ?>"  class="nav-link custom-nav-link text-white">
+              <svg class="bi me-2" width="16" height="16">
+                <use xlink:href="#table" />
+              </svg>
+              <?= $y['name'] ?>
+            </a>
+            <?php endforeach; ?>
+          </li>
+          <?php endforeach; endif; ?>
+          <li class="nav-item">
         </ul>
         <hr>
         <div class="dropdown">

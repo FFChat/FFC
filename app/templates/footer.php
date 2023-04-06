@@ -1,5 +1,6 @@
         <script>
-          userId = <?= $_SESSION['id'] ?>
+          const userId = <?= $_SESSION['id'] ?>;
+          const nodeIP = <?= getenv('nodeIP') ?>;
           // userName = <?= $_SESSION['nickname'] ?>
         </script>
         <script src="/vendor/bootstrap/js/bootstrap.min.js"></script>
