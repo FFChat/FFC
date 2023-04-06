@@ -1,4 +1,4 @@
-<?
+<?php
 
 require_once('../model/general_chat.php');
 $id_chanel = 1;
